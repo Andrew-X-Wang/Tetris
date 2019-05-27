@@ -1,0 +1,6 @@
+#Start recording tcl command: 5/27/2019 19:03:54
+#Project Location: C:/Users/stone/Desktop/COLLEG/Halligan/es4/Project/Tetris/ImpactAttempt04_29; Project name: ImpactAttempt04_29
+prj_open "C:/Users/stone/Desktop/COLLEG/Halligan/es4/Project/Tetris/ImpactAttempt04_29/ImpactAttempt04_29.rdf"
+prj_run Export -impl impl_1
+launch_programmer_prj "C:/lscc/radiant/1.0"
+#Stop recording: 5/27/2019 19:10:38

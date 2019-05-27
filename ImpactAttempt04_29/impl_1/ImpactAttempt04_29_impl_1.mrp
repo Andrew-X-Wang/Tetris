@@ -5,25 +5,25 @@ Target Device:        iCE40UP5KSG48
 Target Performance:   High-Performance_1.2V
 
 Mapper:    version Radiant (64-bit) 1.0.0.350.6
-Mapped on: Mon Apr 29 14:35:59 2019
+Mapped on: Mon May 27 18:41:50 2019
 
 Design Information
 ------------------
 
-Command line:   map ImpactAttempt04_29_impl_1_syn.udb
-     C:/Users/stone/my_designs/ImpactAttempt04_29/Constraints.pdc -o
+Command line:   map ImpactAttempt04_29_impl_1_syn.udb C:/Users/stone/Desktop/COL
+     LEG/Halligan/es4/Project/Tetris/ImpactAttempt04_29/Constraints.pdc -o
      ImpactAttempt04_29_impl_1.udb -gui
 
 Design Summary
 --------------
 
-   Number of slice registers: 228 out of  5280 (4%)
+   Number of slice registers: 233 out of  5280 (4%)
    Number of I/O registers:      2 out of   117 (2%)
-   Number of LUT4s:           581 out of  5280 (11%)
-      Number of logic LUT4s:             480
+   Number of LUT4s:           649 out of  5280 (12%)
+      Number of logic LUT4s:             542
       Number of inserted feedthru LUT4s:  23
       Number of replicated LUT4s:          2
-      Number of ripple logic:             38 (76 LUT4s)
+      Number of ripple logic:             41 (82 LUT4s)
    Number of IO sites used:   16 out of 39 (41%)
       Number of IO sites used for general PIOs: 16
       Number of IO sites used for I3Cs: 0 out of 2 (0%)
@@ -44,22 +44,22 @@ Design Summary
    Number of PLLs:             0 out of 1 (0%)
    Number of Clocks:  3
       Net nes_inst/cnt[8]: 8 loads, 8 rising, 0 falling (Driver: Pin
-     nes_inst.CLK_MAP.cnt_791_874__i8/Q)
-      Net matrix_clk_c: 198 loads, 198 rising, 0 falling (Driver: Pin
+     nes_inst.CLK_MAP.cnt_848_931__i8/Q)
+      Net matrix_clk_c: 201 loads, 201 rising, 0 falling (Driver: Pin
      flip_flop_clk_11/Q)
       Net clk: 3 loads, 3 rising, 0 falling (Driver: Pin hsosc_inst/CLKHF)
-   Number of Clock Enables:  14
+   Number of Clock Enables:  15
       Net VCC_net: 11 loads, 0 SLICEs
-      Net piece_mem_inst/n3175: 3 loads, 3 SLICEs
-      Net n532: 12 loads, 12 SLICEs
-      Net piece_sel_pg_4__N_487: 4 loads, 3 SLICEs
-      Net n1455: 4 loads, 4 SLICEs
-      Net n7_adj_727: 1 loads, 1 SLICEs
-      Net impact_inst/n3156: 20 loads, 20 SLICEs
+      Net n3606: 17 loads, 17 SLICEs
+      Net piece_mem_inst/n3618: 3 loads, 3 SLICEs
+      Net impact_inst/n3634: 20 loads, 20 SLICEs
+      Net n561: 12 loads, 12 SLICEs
+      Net piece_sel_pg_4__N_511: 4 loads, 3 SLICEs
+      Net n8: 1 loads, 1 SLICEs
+      Net n1628: 4 loads, 4 SLICEs
       Net w_enable_sig: 1 loads, 0 SLICEs
-      Net n483: 3 loads, 3 SLICEs
-      Net fsm_inst/n3186: 2 loads, 2 SLICEs
-      Net n633: 17 loads, 17 SLICEs
+      Net n512: 3 loads, 3 SLICEs
+      Net cc_inst/n4577: 3 loads, 3 SLICEs
 
                                     Page 1
 
@@ -69,27 +69,30 @@ Design Summary
 
 Design Summary (cont)
 ---------------------
-      Net cc_inst/n3157: 2 loads, 2 SLICEs
-      Net cc_inst/n629: 9 loads, 9 SLICEs
+      Net cc_inst/n820: 9 loads, 9 SLICEs
+      Net cc_inst/n3608: 2 loads, 2 SLICEs
+      Net fsm_inst/n3638: 2 loads, 2 SLICEs
       Net MD_inst/row_up_3__N_338: 3 loads, 3 SLICEs
-   Number of LSRs:  6
-      Net piece_sel_pg_4__N_487: 7 loads, 7 SLICEs
-      Net Spawn_inst/n5507: 3 loads, 3 SLICEs
-      Net fsm_inst/piece_w_enable_out_N_67: 1 loads, 1 SLICEs
-      Net cc_inst/n3276: 17 loads, 17 SLICEs
-      Net pattern_gen_inst/n1509: 3 loads, 3 SLICEs
+   Number of LSRs:  8
+      Net n3718: 17 loads, 17 SLICEs
+      Net impact_inst/n3749: 15 loads, 15 SLICEs
+      Net piece_sel_pg_4__N_511: 7 loads, 7 SLICEs
+      Net Spawn_inst/n3758: 3 loads, 3 SLICEs
+      Net piece_w_data_out_13__N_58: 1 loads, 1 SLICEs
+      Net pattern_gen_inst/n1680: 3 loads, 3 SLICEs
+      Net cc_inst/n4568: 3 loads, 3 SLICEs
       Net MD_inst/scol_5__N_333: 4 loads, 4 SLICEs
    Top 10 highest fanout non-clock nets:
-      Net n4556: 29 loads
-      Net curr_state[0]: 28 loads
-      Net curr_state[1]: 28 loads
-      Net VCC_net: 26 loads
-      Net impact_inst/n3156: 21 loads
-      Net piece_sel_pg_4__N_487: 20 loads
-      Net n633: 18 loads
-      Net w_enable_piece_sig[0]: 18 loads
-      Net write_piece_N_253: 17 loads
-      Net w_enable_piece_sig[1]: 17 loads
+      Net n5582: 31 loads
+      Net curr_state[0]: 27 loads
+      Net curr_state[1]: 27 loads
+      Net VCC_net: 27 loads
+      Net p2x_sum_adj_761[1]: 22 loads
+      Net piece_sel_pg_4__N_511: 22 loads
+      Net impact_inst/n3634: 21 loads
+      Net n3606: 18 loads
+      Net p2x_sum_adj_761[0]: 18 loads
+      Net ref_x[0]: 18 loads
 
 
 
@@ -121,11 +124,8 @@ IO (PIO) Attributes
 +---------------------+-----------+-----------+
 | lat                 | OUTPUT    | LVCMOS33  |
 +---------------------+-----------+-----------+
-| row[0]              | OUTPUT    | LVCMOS33  |
-+---------------------+-----------+-----------+
 | RGB[5]              | OUTPUT    | LVCMOS33  |
 +---------------------+-----------+-----------+
-| RGB[4]              | OUTPUT    | LVCMOS33  |
 
                                     Page 2
 
@@ -135,6 +135,7 @@ IO (PIO) Attributes
 
 IO (PIO) Attributes (cont)
 --------------------------
+| RGB[4]              | OUTPUT    | LVCMOS33  |
 +---------------------+-----------+-----------+
 | RGB[3]              | OUTPUT    | LVCMOS33  |
 +---------------------+-----------+-----------+
@@ -149,6 +150,8 @@ IO (PIO) Attributes (cont)
 | row[2]              | OUTPUT    | LVCMOS33  |
 +---------------------+-----------+-----------+
 | row[1]              | OUTPUT    | LVCMOS33  |
++---------------------+-----------+-----------+
+| row[0]              | OUTPUT    | LVCMOS33  |
 +---------------------+-----------+-----------+
 
 OSC Summary
@@ -177,20 +180,17 @@ Instance Name: MD_inst.slat_23
          Type: IOLOGIC
 Instance Name: MD_inst.MD_OE_22
          Type: IOLOGIC
-Instance Name: UArray2b_inst.mem0
-         Type: EBR
 Instance Name: hsosc_inst
          Type: HFOSC
+Instance Name: UArray2b_inst.mem0
+         Type: EBR
 
 Run Time and Memory Usage
 -------------------------
 
-   Total CPU Time: 0 secs
+   Total CPU Time: 1 secs
    Total REAL Time: 0 secs
-   Peak Memory Usage: 77 MB
-
-
-
+   Peak Memory Usage: 79 MB
 
 
                                     Page 3

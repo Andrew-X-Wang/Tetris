@@ -75,7 +75,11 @@ component controller_change is
 		manip_fin : out std_logic;
 		
 		piece_w_data_out : out std_logic_vector(13 downto 0);
-		piece_w_enable_out : out std_logic
+		piece_w_enable_out : out std_logic;
+		
+		-- For impact checking:
+		board_r_data_in : in std_logic_vector(15 downto 0);
+		board_r_addr_out : out std_logic_vector(5 downto 0)
 	);
 end component;
 
@@ -196,6 +200,7 @@ signal r_data_sig : std_logic_vector(15 downto 0);
 -- signal r_addr_sig : std_logic_vector(5 downto 0);
 signal r_addr_pat_sig : std_logic_vector(5 downto 0);
 signal r_addr_imp_sig : std_logic_vector(5 downto 0);
+signal r_addr_bump_sig : std_logic_vector(5 downto 0);
 signal w_addr_sig : std_logic_vector(5 downto 0);
 signal w_data_sig : std_logic_vector(15 downto 0);
 signal w_enable_sig : std_logic;
@@ -285,7 +290,11 @@ cc_inst : controller_change port map(
 	----------------------
 	piece_r_data_in => r_data_piece_sig_cc,
 	piece_w_data_out => w_data_piece_sig_cc,
-	piece_w_enable_out => w_enable_piece_sig(1)
+	piece_w_enable_out => w_enable_piece_sig(1),
+	----------------------
+	-- For bump checking
+	board_r_data_in => r_data_sig,
+	board_r_addr_out => r_addr_bump_sig
 );
 
 fsm_inst : FSM port map(

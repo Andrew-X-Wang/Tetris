@@ -5,8 +5,8 @@ use IEEE.numeric_std.all;
 entity UArray2b is
   port(
 	clk : in std_logic;
-	r_addr_pat : in std_logic_vector(5 downto 0);
-	r_addr_imp : in std_logic_vector(5 downto 0);
+	r_addr_pat : in std_logic_vector(5 downto 0);		--@TODO: Should be (3 downto 0);
+	r_addr_imp : in std_logic_vector(5 downto 0);		
 	--r_addr : in std_logic_vector(5 downto 0);
 	r_data : out std_logic_vector(15 downto 0);
 	w_addr : in std_logic_vector(5 downto 0);

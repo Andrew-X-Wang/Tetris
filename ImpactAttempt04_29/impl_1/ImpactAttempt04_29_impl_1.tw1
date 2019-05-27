@@ -1,6 +1,6 @@
 Lattice Timing Report -  Setup  and Hold, Version Radiant (64-bit) 1.0.0.350.6
 
-Mon Apr 29 14:36:00 2019
+Mon May 27 18:41:51 2019
 
 Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
 Copyright (c) 1995 AT&T Corp.   All rights reserved.
@@ -94,7 +94,7 @@ Clock Domain Crossing
 
 3.1.1  Constraint Coverage
 ---------------------------
-Constraint Coverage: 0.414766%
+Constraint Coverage: 0.37679%
 
 3.1.2  Timing Errors
 ---------------------
@@ -124,10 +124,10 @@ KHF }]                                  |   20.833 ns |    0.003 ns |    0   |  
 -------------------------------------------------------
           Listing 4 End Points           |    Slack    
 -------------------------------------------------------
-counter_784_875__i2/D                    |   15.868 ns 
-counter_784_875__i1/D                    |   16.784 ns 
+counter_838_932__i2/D                    |   15.868 ns 
+counter_838_932__i1/D                    |   16.784 ns 
 flip_flop_clk_11/D                       |   17.628 ns 
-counter_784_875__i0/D                    |   17.766 ns 
+counter_838_932__i0/D                    |   17.766 ns 
 -------------------------------------------------------
                                          |             
 Setup # of endpoints with negative slack:|           0 
@@ -155,9 +155,9 @@ KHF }]                                  |    0.000 ns |    2.841 ns |    2   |  
 -------------------------------------------------------
           Listing 4 End Points           |    Slack    
 -------------------------------------------------------
-counter_784_875__i1/D                    |    2.841 ns 
-counter_784_875__i0/D                    |    2.841 ns 
-counter_784_875__i2/D                    |    2.979 ns 
+counter_838_932__i0/D                    |    2.841 ns 
+counter_838_932__i1/D                    |    2.841 ns 
+counter_838_932__i2/D                    |    2.979 ns 
 flip_flop_clk_11/D                       |    2.979 ns 
 -------------------------------------------------------
                                          |             
@@ -175,20 +175,20 @@ Clocked but unconstrained timing start points
 -------------------------------------------------------------------
         Listing 10 Start Points         |           Type           
 -------------------------------------------------------------------
-nes_inst/CLK_MAP/cnt_791_874__i8/Q      |    No arrival or required
-nes_inst/sipo_16_i0/Q                   |    No arrival or required
-nes_inst/sipo_16_i7/Q                   |    No arrival or required
-nes_inst/sipo_i4/Q                      |    No arrival or required
-nes_inst/sipo_i3/Q                      |    No arrival or required
+nes_inst/sipo_i6/Q                      |    No arrival or required
+nes_inst/sipo_i5/Q                      |    No arrival or required
+nes_inst/p_data__i6/Q                   |    No arrival or required
+nes_inst/sipo_i7/Q                      |    No arrival or required
 nes_inst/sipo_i0/Q                      |    No arrival or required
-nes_inst/sipo_16_i6/Q                   |    No arrival or required
-nes_inst/sipo_16_i5/Q                   |    No arrival or required
-nes_inst/sipo_16_i4/Q                   |    No arrival or required
-nes_inst/sipo_16_i3/Q                   |    No arrival or required
+nes_inst/CLK_MAP/cnt_848_931__i12/Q     |    No arrival or required
+nes_inst/CLK_MAP/cnt_848_931__i11/Q     |    No arrival or required
+nes_inst/CLK_MAP/cnt_848_931__i9/Q      |    No arrival or required
+nes_inst/CLK_MAP/cnt_848_931__i8/Q      |    No arrival or required
+nes_inst/sipo_16_i0/Q                   |    No arrival or required
 -------------------------------------------------------------------
                                         |                          
 Number of unconstrained timing start po |                          
-ints                                    |                       279
+ints                                    |                       284
                                         |                          
 -------------------------------------------------------------------
 
@@ -196,20 +196,20 @@ Clocked but unconstrained timing end points
 -------------------------------------------------------------------
          Listing 10 End Points          |           Type           
 -------------------------------------------------------------------
-nes_inst/sipo_16_i0/D                   |    No arrival or required
-nes_inst/sipo_16_i7/D                   |    No arrival or required
-nes_inst/sipo_16_i4/D                   |    No arrival or required
 nes_inst/sipo_16_i6/D                   |    No arrival or required
+nes_inst/p_data__i6/D                   |    No arrival or required
+nes_inst/sipo_16_i7/D                   |    No arrival or required
+nes_inst/sipo_16_i0/D                   |    No arrival or required
 nes_inst/sipo_16_i5/D                   |    No arrival or required
+nes_inst/sipo_16_i4/D                   |    No arrival or required
 nes_inst/sipo_16_i3/D                   |    No arrival or required
 nes_inst/sipo_16_i2/D                   |    No arrival or required
 nes_inst/sipo_16_i1/D                   |    No arrival or required
 nes_inst/p_data__i2/D                   |    No arrival or required
-nes_inst/p_data__i3/D                   |    No arrival or required
 -------------------------------------------------------------------
                                         |                          
 Number of unconstrained timing end poin |                          
-ts                                      |                       372
+ts                                      |                       383
                                         |                          
 -------------------------------------------------------------------
 
@@ -235,10 +235,10 @@ latch_top                               |                    output
 matrix_clk                              |                    output
 OE                                      |                    output
 lat                                     |                    output
-row[0]                                  |                    output
 RGB[5]                                  |                    output
 RGB[4]                                  |                    output
 RGB[3]                                  |                    output
+RGB[2]                                  |                    output
 -------------------------------------------------------------------
                                         |                          
 Number of I/O ports without constraint  |                        16
@@ -276,8 +276,8 @@ Period margin    : 0.003333 ns  (Passed)
 
  ++++Path 1  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-Path Begin       : counter_784_875__i0/Q
-Path End         : counter_784_875__i2/D
+Path Begin       : counter_838_932__i0/Q
+Path End         : counter_838_932__i2/D
 Source Clock     : hsosc_inst/CLKHF
 Destination Clock: hsosc_inst/CLKHF
 Logic Level      : 4
@@ -312,16 +312,16 @@ clk                                                       NET DELAY      0.719  
 Data path
 Name                                      Cell/Site Name  Delay Name           Delay  Arrival Time  Fanout  
 ----------------------------------------  --------------  -------------------  -----  ------------  ------  
-counter_784_875__i0/CK->counter_784_875__i0/Q
+counter_838_932__i0/CK->counter_838_932__i0/Q
                                           SLICE           CLK_TO_Q1_DELAY      1.391         2.110  1       
 n3                                                        NET DELAY            0.500         2.610  1       
-counter_784_875_add_4_1/C1->counter_784_875_add_4_1/CO1
+counter_838_932_add_4_1/C1->counter_838_932_add_4_1/CO1
                                           SLICE           C1_TO_COUT1_DELAY    0.344         2.954  2       
-n6198                                                     NET DELAY            0.638         3.592  1       
-counter_784_875_add_4_3/CI0->counter_784_875_add_4_3/CO0
+n8023                                                     NET DELAY            0.638         3.592  1       
+counter_838_932_add_4_3/CI0->counter_838_932_add_4_3/CO0
                                           SLICE           CIN0_TO_COUT0_DELAY  0.278         3.870  2       
-n8589                                                     NET DELAY            0.638         4.508  1       
-counter_784_875_add_4_3/D1->counter_784_875_add_4_3/S1
+n10696                                                    NET DELAY            0.638         4.508  1       
+counter_838_932_add_4_3/D1->counter_838_932_add_4_3/S1
                                           SLICE           D1_TO_F1_DELAY       0.477         4.985  1       
 n18                                                       NET DELAY            0.500         5.485  1       
 
@@ -337,8 +337,8 @@ clk                                                       NET DELAY      0.719  
 
  ++++Path 2  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-Path Begin       : counter_784_875__i0/Q
-Path End         : counter_784_875__i1/D
+Path Begin       : counter_838_932__i0/Q
+Path End         : counter_838_932__i1/D
 Source Clock     : hsosc_inst/CLKHF
 Destination Clock: hsosc_inst/CLKHF
 Logic Level      : 3
@@ -373,13 +373,13 @@ clk                                                       NET DELAY      0.719  
 Data path
 Name                                      Cell/Site Name  Delay Name         Delay  Arrival Time  Fanout  
 ----------------------------------------  --------------  -----------------  -----  ------------  ------  
-counter_784_875__i0/CK->counter_784_875__i0/Q
+counter_838_932__i0/CK->counter_838_932__i0/Q
                                           SLICE           CLK_TO_Q1_DELAY    1.391         2.110  1       
 n3                                                        NET DELAY          0.500         2.610  1       
-counter_784_875_add_4_1/C1->counter_784_875_add_4_1/CO1
+counter_838_932_add_4_1/C1->counter_838_932_add_4_1/CO1
                                           SLICE           C1_TO_COUT1_DELAY  0.344         2.954  2       
-n6198                                                     NET DELAY          0.638         3.592  1       
-counter_784_875_add_4_3/D0->counter_784_875_add_4_3/S0
+n8023                                                     NET DELAY          0.638         3.592  1       
+counter_838_932_add_4_3/D0->counter_838_932_add_4_3/S0
                                           SLICE           D0_TO_F0_DELAY     0.477         4.069  1       
 n19                                                       NET DELAY          0.500         4.569  1       
 
@@ -395,7 +395,7 @@ clk                                                       NET DELAY      0.719  
 
  ++++Path 3  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-Path Begin       : counter_784_875__i2/Q
+Path Begin       : counter_838_932__i2/Q
 Path End         : flip_flop_clk_11/D
 Source Clock     : hsosc_inst/CLKHF
 Destination Clock: hsosc_inst/CLKHF
@@ -431,11 +431,11 @@ clk                                                       NET DELAY      0.719  
 Data path
 Name                                      Cell/Site Name  Delay Name       Delay  Arrival Time  Fanout  
 ----------------------------------------  --------------  ---------------  -----  ------------  ------  
-{counter_784_875__i1/CK   counter_784_875__i2/CK}->counter_784_875__i2/Q
+{counter_838_932__i1/CK   counter_838_932__i2/CK}->counter_838_932__i2/Q
                                           SLICE           CLK_TO_Q1_DELAY  1.391         2.110  2       
 counter[2]                                                NET DELAY        0.638         2.748  1       
-SLICE_61/A0->SLICE_61/F0                  SLICE           A0_TO_F0_DELAY   0.477         3.225  1       
-counter[2]/sig_008/FeedThruLUT                            NET DELAY        0.500         3.725  1       
+SLICE_147/A0->SLICE_147/F0                SLICE           A0_TO_F0_DELAY   0.477         3.225  1       
+counter[2]/sig_022/FeedThruLUT                            NET DELAY        0.500         3.725  1       
 
 
 Destination Clock Path
@@ -449,8 +449,8 @@ clk                                                       NET DELAY      0.719  
 
  ++++Path 4  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-Path Begin       : counter_784_875__i0/Q
-Path End         : counter_784_875__i0/D
+Path Begin       : counter_838_932__i0/Q
+Path End         : counter_838_932__i0/D
 Source Clock     : hsosc_inst/CLKHF
 Destination Clock: hsosc_inst/CLKHF
 Logic Level      : 2
@@ -485,10 +485,10 @@ clk                                                       NET DELAY      0.719  
 Data path
 Name                                      Cell/Site Name  Delay Name       Delay  Arrival Time  Fanout  
 ----------------------------------------  --------------  ---------------  -----  ------------  ------  
-counter_784_875__i0/CK->counter_784_875__i0/Q
+counter_838_932__i0/CK->counter_838_932__i0/Q
                                           SLICE           CLK_TO_Q1_DELAY  1.391         2.110  1       
 n3                                                        NET DELAY        0.500         2.610  1       
-counter_784_875_add_4_1/C1->counter_784_875_add_4_1/S1
+counter_838_932_add_4_1/C1->counter_838_932_add_4_1/S1
                                           SLICE           C1_TO_F1_DELAY   0.477         3.087  1       
 n20                                                       NET DELAY        0.500         3.587  1       
 
@@ -517,8 +517,8 @@ clk                                                       NET DELAY      0.719  
 
  ++++Path 1  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-Path Begin       : counter_784_875__i1/Q
-Path End         : counter_784_875__i1/D
+Path Begin       : counter_838_932__i1/Q
+Path End         : counter_838_932__i1/D
 Source Clock     : hsosc_inst/CLKHF
 Destination Clock: hsosc_inst/CLKHF
 Logic Level      : 2
@@ -553,10 +553,10 @@ clk                                                       NET DELAY      0.719  
 Data path
 Name                                      Cell/Site Name  Delay Name       Delay  Arrival Time  Fanout  
 ----------------------------------------  --------------  ---------------  -----  ------------  ------  
-{counter_784_875__i1/CK   counter_784_875__i2/CK}->counter_784_875__i1/Q
+{counter_838_932__i1/CK   counter_838_932__i2/CK}->counter_838_932__i1/Q
                                           SLICE           CLK_TO_Q0_DELAY  1.391         2.110  1       
 n2                                                        NET DELAY        0.500         2.610  1       
-counter_784_875_add_4_3/C0->counter_784_875_add_4_3/S0
+counter_838_932_add_4_3/C0->counter_838_932_add_4_3/S0
                                           SLICE           C0_TO_F0_DELAY   0.450         3.060  1       
 n19                                                       NET DELAY        0.500         3.560  1       
 
@@ -572,8 +572,8 @@ clk                                                       NET DELAY      0.719  
 
  ++++Path 2  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-Path Begin       : counter_784_875__i0/Q
-Path End         : counter_784_875__i0/D
+Path Begin       : counter_838_932__i0/Q
+Path End         : counter_838_932__i0/D
 Source Clock     : hsosc_inst/CLKHF
 Destination Clock: hsosc_inst/CLKHF
 Logic Level      : 2
@@ -608,10 +608,10 @@ clk                                                       NET DELAY      0.719  
 Data path
 Name                                      Cell/Site Name  Delay Name       Delay  Arrival Time  Fanout  
 ----------------------------------------  --------------  ---------------  -----  ------------  ------  
-counter_784_875__i0/CK->counter_784_875__i0/Q
+counter_838_932__i0/CK->counter_838_932__i0/Q
                                           SLICE           CLK_TO_Q1_DELAY  1.391         2.110  1       
 n3                                                        NET DELAY        0.500         2.610  1       
-counter_784_875_add_4_1/C1->counter_784_875_add_4_1/S1
+counter_838_932_add_4_1/C1->counter_838_932_add_4_1/S1
                                           SLICE           C1_TO_F1_DELAY   0.450         3.060  1       
 n20                                                       NET DELAY        0.500         3.560  1       
 
@@ -627,8 +627,8 @@ clk                                                       NET DELAY      0.719  
 
  ++++Path 3  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-Path Begin       : counter_784_875__i2/Q
-Path End         : counter_784_875__i2/D
+Path Begin       : counter_838_932__i2/Q
+Path End         : counter_838_932__i2/D
 Source Clock     : hsosc_inst/CLKHF
 Destination Clock: hsosc_inst/CLKHF
 Logic Level      : 2
@@ -663,10 +663,10 @@ clk                                                       NET DELAY      0.719  
 Data path
 Name                                      Cell/Site Name  Delay Name       Delay  Arrival Time  Fanout  
 ----------------------------------------  --------------  ---------------  -----  ------------  ------  
-{counter_784_875__i1/CK   counter_784_875__i2/CK}->counter_784_875__i2/Q
+{counter_838_932__i1/CK   counter_838_932__i2/CK}->counter_838_932__i2/Q
                                           SLICE           CLK_TO_Q1_DELAY  1.391         2.110  2       
 counter[2]                                                NET DELAY        0.638         2.748  1       
-counter_784_875_add_4_3/C1->counter_784_875_add_4_3/S1
+counter_838_932_add_4_3/C1->counter_838_932_add_4_3/S1
                                           SLICE           C1_TO_F1_DELAY   0.450         3.198  1       
 n18                                                       NET DELAY        0.500         3.698  1       
 
@@ -682,7 +682,7 @@ clk                                                       NET DELAY      0.719  
 
  ++++Path 4  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-Path Begin       : counter_784_875__i2/Q
+Path Begin       : counter_838_932__i2/Q
 Path End         : flip_flop_clk_11/D
 Source Clock     : hsosc_inst/CLKHF
 Destination Clock: hsosc_inst/CLKHF
@@ -718,11 +718,11 @@ clk                                                       NET DELAY      0.719  
 Data path
 Name                                      Cell/Site Name  Delay Name       Delay  Arrival Time  Fanout  
 ----------------------------------------  --------------  ---------------  -----  ------------  ------  
-{counter_784_875__i1/CK   counter_784_875__i2/CK}->counter_784_875__i2/Q
+{counter_838_932__i1/CK   counter_838_932__i2/CK}->counter_838_932__i2/Q
                                           SLICE           CLK_TO_Q1_DELAY  1.391         2.110  2       
 counter[2]                                                NET DELAY        0.638         2.748  1       
-SLICE_61/A0->SLICE_61/F0                  SLICE           A0_TO_F0_DELAY   0.450         3.198  1       
-counter[2]/sig_008/FeedThruLUT                            NET DELAY        0.500         3.698  1       
+SLICE_147/A0->SLICE_147/F0                SLICE           A0_TO_F0_DELAY   0.450         3.198  1       
+counter[2]/sig_022/FeedThruLUT                            NET DELAY        0.500         3.698  1       
 
 
 Destination Clock Path

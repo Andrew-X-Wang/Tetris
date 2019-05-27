@@ -1,6 +1,6 @@
 
 Lattice Place and Route Report for Design "ImpactAttempt04_29_impl_1_map.udb"
-Mon Apr 29 14:36:01 2019
+Mon May 27 18:41:52 2019
 
 PAR: Place And Route Radiant (64-bit) 1.0.0.350.6.
 Command Line: par -w -t 1 -exp parPathBased=ON \
@@ -15,13 +15,13 @@ Package: SG48
 Performance Grade:   High-Performance_1.2V
 
 WARNING: udb::Constraint "create_clock -name {hsosc_inst/CLKHF} -period 20.8333 [get_pins hsosc_inst/CLKHF]" does not have corresponding tmConstraint. Please check if the resource objects of the constraint are valid carefully!
-Number of Signals: 927
-Number of Connections: 2519
+Number of Signals: 1004
+Number of Connections: 2784
 Device utilization summary:
 
-   SLICE (est.)     307/2640         11% used
-     LUT            581/5280         11% used
-     REG            228/5280          4% used
+   SLICE (est.)     346/2640         13% used
+     LUT            649/5280         12% used
+     REG            233/5280          4% used
    PIO               16/56           28% used
                      16/36           44% bonded
    IOLOGIC            2/56            3% used
@@ -43,35 +43,35 @@ Device utilization summary:
 
 Pin Constraint Summary:
    16 out of 16 pins locked (100% locked).
-Finished Placer Phase 0 (HIER).  CPU time: 1 secs , REAL time: 0 secs 
+Finished Placer Phase 0 (HIER).  CPU time: 2 secs , REAL time: 2 secs 
 
 
 ................
-Finished Placer Phase 0 (AP).  CPU time: 2 secs , REAL time: 2 secs 
+Finished Placer Phase 0 (AP).  CPU time: 3 secs , REAL time: 4 secs 
 
-Starting Placer Phase 1. REAL time: 2 secs 
+Starting Placer Phase 1. REAL time: 4 secs 
 ..  ..
-....................
+......................
 
-Placer score = 97253.
+Placer score = 113066.
 
 Device SLICE utilization summary after final SLICE packing:
-   SLICE            306/2640         11% used
+   SLICE            345/2640         13% used
 
-Finished Placer Phase 1.  CPU time: 11 secs , REAL time: 11 secs 
+Finished Placer Phase 1.  CPU time: 17 secs , REAL time: 18 secs 
 
 Starting Placer Phase 2.
 .
 
-Placer score =  126000
-Finished Placer Phase 2.  CPU time: 11 secs , REAL time: 11 secs 
+Placer score =  142088
+Finished Placer Phase 2.  CPU time: 18 secs , REAL time: 18 secs 
 
 
 ------------------ Clock Report ------------------
 
 Global Clocks :
   PRIMARY "clk" from comp "hsosc_inst" on site "HFOSC_R1C32", clk load = 3, ce load = 0, sr load = 0
-  PRIMARY "matrix_clk_c" from Q0 on comp "SLICE_61" on site "R13C2D", clk load = 132, ce load = 0, sr load = 0
+  PRIMARY "matrix_clk_c" from Q0 on comp "SLICE_147" on site "R13C2B", clk load = 135, ce load = 0, sr load = 0
 
   PRIMARY  : 2 out of 8 (25%)
 
@@ -93,12 +93,12 @@ I/O Bank Usage Summary:
 | 2        | 3 / 8 ( 37%)  | 3.3V       |            |            |
 +----------+---------------+------------+------------+------------+
 
-Total Placer CPU time: 11 secs , REAL time: 11 secs 
+Total Placer CPU time: 18 secs , REAL time: 18 secs 
 
 Writing design to file ImpactAttempt04_29_impl_1_par.dir/5_1.udb ...
 
 
-Start NBR router at 14:36:13 04/29/19
+Start NBR router at 18:42:11 05/27/19
 
 *****************************************************************
 Info: NBR allows conflicts(one node used by more than one signal)
@@ -114,19 +114,19 @@ Note: NBR uses a different method to calculate timing slacks. The
 *****************************************************************
 
 Starting routing resource preassignment
-WARNING - par: The driver of primary clock signal matrix_clk_c is placed in a location (R13C2D.Q0) that cannot drive the primary clock tree with dedicated routing resources. Some general routing resources may be used and this clock may suffer from excessive skew or delay.
+WARNING - par: The driver of primary clock signal matrix_clk_c is placed in a location (R13C2B.Q0) that cannot drive the primary clock tree with dedicated routing resources. Some general routing resources may be used and this clock may suffer from excessive skew or delay.
 Preassignment Summary:
 --------------------------------------------------------------------------------
-295 connections routed with dedicated routing resources
+305 connections routed with dedicated routing resources
 2 global clock signals routed
-298 connections routed (of 2420 total) (12.31%)
+308 connections routed (of 2679 total) (11.50%)
 ---------------------------------------------------------
 Clock routing summary:
 Primary clocks (2 used out of 8 available):
 #4  Signal "clk"
        Clock   loads: 3     out of     3 routed (100.00%)
 #5  Signal "matrix_clk_c"
-       Clock   loads: 0     out of   132 routed (  0.00%)
+       Clock   loads: 0     out of   135 routed (  0.00%)
        Data    loads: 0     out of     1 routed (  0.00%)
 Other clocks:
     Signal "nes_inst/cnt[8]"
@@ -134,41 +134,32 @@ Other clocks:
        Data    loads: 0     out of     2 routed (  0.00%)
 
 WARNING - par: The following clock signals are routed with generic routing resources and may suffer from excessive delay and/or skew:
-   "matrix_clk_c" (132 clock loads, 133 total loads)
+   "matrix_clk_c" (135 clock loads, 136 total loads)
 
 ---------------------------------------------------------
 --------------------------------------------------------------------------------
 Completed routing resource preassignment
 
-Start NBR section for initial routing at 14:36:14 04/29/19
+Start NBR section for initial routing at 18:42:12 05/27/19
 Level 4, iteration 1
-37(0.01%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: 20827.956ns/0.000ns; real time: 2 secs 
+48(0.02%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: 20827.584ns/0.000ns; real time: 3 secs 
 
 Info: Initial congestion level at 75% usage is 0
 Info: Initial congestion area  at 75% usage is 0 (0.00%)
 
-Start NBR section for normal routing at 14:36:15 04/29/19
+Start NBR section for normal routing at 18:42:15 05/27/19
 Level 4, iteration 1
-1(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: 20827.956ns/0.000ns; real time: 2 secs 
-Level 4, iteration 2
-1(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: 20827.956ns/0.000ns; real time: 2 secs 
-Level 4, iteration 3
-1(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: 20827.956ns/0.000ns; real time: 2 secs 
-Level 4, iteration 4
 0(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: 20827.956ns/0.000ns; real time: 2 secs 
+Estimated worst slack/total negative slack<setup>: 20827.584ns/0.000ns; real time: 4 secs 
 
-Start NBR section for setup/hold timing optimization with effort level 3 at 14:36:15 04/29/19
+Start NBR section for setup/hold timing optimization with effort level 3 at 18:42:15 05/27/19
 
-Start NBR section for re-routing at 14:36:16 04/29/19
+Start NBR section for re-routing at 18:42:17 05/27/19
 Level 4, iteration 1
-0(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; 0 (nbr) score; real time: 3 secs 
+0(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; 0 (nbr) score; real time: 6 secs 
 
-Start NBR section for post-routing at 14:36:16 04/29/19
+Start NBR section for post-routing at 18:42:17 05/27/19
 
 End NBR router with 0 unrouted connection
 
@@ -188,7 +179,7 @@ Primary clocks (2 used out of 8 available):
 #4  Signal "clk"
        Clock   loads: 3     out of     3 routed (100.00%)
 #5  Signal "matrix_clk_c"
-       Clock   loads: 132   out of   132 routed (100.00%)
+       Clock   loads: 135   out of   135 routed (100.00%)
        Data    loads: 1     out of     1 routed (100.00%)
 Other clocks:
     Signal "nes_inst/cnt[8]"
@@ -196,13 +187,13 @@ Other clocks:
        Data    loads: 2     out of     2 routed (100.00%)
 
 WARNING - par: The following clock signals are routed with generic routing resources and may suffer from excessive delay and/or skew:
-   "matrix_clk_c" (132 clock loads, 133 total loads)
+   "matrix_clk_c" (135 clock loads, 136 total loads)
 
 ---------------------------------------------------------
-Total CPU time 7 secs 
-Total REAL time: 7 secs 
+Total CPU time 12 secs 
+Total REAL time: 13 secs 
 Completely routed.
-End of route.  2420 routed (100.00%); 0 unrouted.
+End of route.  2679 routed (100.00%); 0 unrouted.
 
 Writing design to file ImpactAttempt04_29_impl_1_par.dir/5_1.udb ...
 
@@ -212,15 +203,15 @@ All signals are completely routed.
 
 PAR_SUMMARY::Run status = Success
 PAR_SUMMARY::Number of unrouted conns = 0
-PAR_SUMMARY::Worst  slack<setup/<ns>> = 20827.956
+PAR_SUMMARY::Worst  slack<setup/<ns>> = 20827.584
 PAR_SUMMARY::Timing score<setup/<ns>> = 0.000
 PAR_SUMMARY::Worst  slack<hold /<ns>> = 3.417
 PAR_SUMMARY::Timing score<hold /<ns>> = 0.000
 PAR_SUMMARY::Number of errors = 0
 
-Total CPU  Time: 19 secs 
-Total REAL Time: 19 secs 
-Peak Memory Usage: 144 MB
+Total CPU  Time: 31 secs 
+Total REAL Time: 32 secs 
+Peak Memory Usage: 149 MB
 
 
 par done!

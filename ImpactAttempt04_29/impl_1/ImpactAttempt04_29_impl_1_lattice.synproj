@@ -33,24 +33,23 @@
 
 -use_io_insertion 1
 -resolve_mixed_drivers 0
--path "C:/lscc/radiant/1.0/ispfpga/ice40tp/data" "C:/Users/stone/my_designs/ImpactAttempt04_29/impl_1" "C:/Users/stone/my_designs/ImpactAttempt04_29"
+-path "C:/lscc/radiant/1.0/ispfpga/ice40tp/data" "C:/Users/stone/Desktop/COLLEG/Halligan/es4/Project/Tetris/ImpactAttempt04_29/impl_1" "C:/Users/stone/Desktop/COLLEG/Halligan/es4/Project/Tetris/ImpactAttempt04_29"
 -ver "C:/lscc/radiant/1.0/ip/pmi/pmi.v"
 -lib pmi -vhd "C:/lscc/radiant/1.0/ip/pmi/pmi.vhd"
--lib "work" -vhd "C:/Users/stone/my_designs/ImpactAttempt04_29/Controller_Change.vhd"
-"C:/Users/stone/my_designs/ImpactAttempt04_29/FSM.vhd"
-"C:/Users/stone/my_designs/ImpactAttempt04_29/Impact.vhd"
-"C:/Users/stone/my_designs/ImpactAttempt04_29/LUT_Piece.vhd"
-"C:/Users/stone/my_designs/ImpactAttempt04_29/Main.vhd"
-"C:/Users/stone/my_designs/ImpactAttempt04_29/Matrix_Driver.vhd"
-"C:/Users/stone/my_designs/ImpactAttempt04_29/NES.vhd"
-"C:/Users/stone/my_designs/ImpactAttempt04_29/Pattern_Gen.vhd"
-"C:/Users/stone/my_designs/ImpactAttempt04_29/Piece_Mem.vhd"
-"C:/Users/stone/my_designs/ImpactAttempt04_29/Slow_Clock.vhd"
-"C:/Users/stone/my_designs/ImpactAttempt04_29/Spawn.vhd"
-"C:/Users/stone/my_designs/ImpactAttempt04_29/UArray2b.vhd"
+-lib "work" -vhd "C:/Users/stone/Desktop/COLLEG/Halligan/es4/Project/Tetris/ImpactAttempt04_29/Controller_Change.vhd"
+"C:/Users/stone/Desktop/COLLEG/Halligan/es4/Project/Tetris/ImpactAttempt04_29/FSM.vhd"
+"C:/Users/stone/Desktop/COLLEG/Halligan/es4/Project/Tetris/ImpactAttempt04_29/Impact.vhd"
+"C:/Users/stone/Desktop/COLLEG/Halligan/es4/Project/Tetris/ImpactAttempt04_29/LUT_Piece.vhd"
+"C:/Users/stone/Desktop/COLLEG/Halligan/es4/Project/Tetris/ImpactAttempt04_29/Main.vhd"
+"C:/Users/stone/Desktop/COLLEG/Halligan/es4/Project/Tetris/ImpactAttempt04_29/Matrix_Driver.vhd"
+"C:/Users/stone/Desktop/COLLEG/Halligan/es4/Project/Tetris/ImpactAttempt04_29/NES.vhd"
+"C:/Users/stone/Desktop/COLLEG/Halligan/es4/Project/Tetris/ImpactAttempt04_29/Pattern_Gen.vhd"
+"C:/Users/stone/Desktop/COLLEG/Halligan/es4/Project/Tetris/ImpactAttempt04_29/Piece_Mem.vhd"
+"C:/Users/stone/Desktop/COLLEG/Halligan/es4/Project/Tetris/ImpactAttempt04_29/Slow_Clock.vhd"
+"C:/Users/stone/Desktop/COLLEG/Halligan/es4/Project/Tetris/ImpactAttempt04_29/Spawn.vhd"
+"C:/Users/stone/Desktop/COLLEG/Halligan/es4/Project/Tetris/ImpactAttempt04_29/UArray2b.vhd"
 
 
--top Main
 -udb "ImpactAttempt04_29_impl_1.udb"
 -output_hdl "ImpactAttempt04_29_impl_1.vm"
 

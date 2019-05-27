@@ -13,7 +13,11 @@ entity controller_change is
 		
 	piece_r_data_in : in std_logic_vector(13 downto 0);-- := "00110000100000";
 	piece_w_data_out : out std_logic_vector(13 downto 0);
-	piece_w_enable_out : out std_logic
+	piece_w_enable_out : out std_logic;
+	
+	-- For bump checking
+	board_r_addr_out : out std_logic_vector(5 downto 0);	-- Reading from board memory to determine bump/constrain movement and rotation
+	board_r_data_in : in std_logic_vector(15 downto 0) 	--Data read in from board memory
 	--down_out : out std_logic
 	
 	);
@@ -57,6 +61,9 @@ signal p3y_sum : unsigned(4 downto 0);
 constant slow_ratio : integer := 1000000;
 signal movement_counter : integer := 0;
 
+constant BOARD_HEIGHT : integer := 22;
+signal read_addr_counter : unsigned(5 downto 0) := "000000";
+
 begin
 
 lut_map : lut_piece port map(
@@ -96,7 +103,7 @@ p3y_sum <= p3y + ref_y;
 				-- rot_val <= piece_r_data_in(1 downto 0);
 					
 					-- MANIPULATION IS DONE WHEN DOWN BUTTON IS PRESSED 
-					if (pdata(6) = '0') then
+					if (pdata(6) = '0') then						--B (Spawn new piece)
 						--down_out <= '1'; -- FIX, change back to 1
 						manip_fin <= '1';
 					else 
@@ -104,17 +111,49 @@ p3y_sum <= p3y + ref_y;
 						--down_out <= '0';
 					end if;
 					
-					if (pdata(0) = '0') then
+					if (pdata(0) = '0') then						--Right --@TODO: Why '-' for right, '+' for left?
 						if movement_counter < slow_ratio then
 							movement_counter <= movement_counter + 1;
 						else
-							if (x_pos /= "0010" and p1x_sum /= "0010" and p2x_sum /= "0010" and p3x_sum /= "0010") then
-								x_pos <= std_logic_vector(unsigned(piece_r_data_in(13 downto 10)) - '1');
+							board_r_addr_out <= std_logic_vector(read_addr_counter);
+							if (unsigned(y_pos) = read_addr_counter - 1) then		-- '-1' to get the row index of the data actually read in
+								if (board_r_data_in(to_integer(unsigned(x_pos) - 1)) = '1') then		-- '-1' to get the position that's trying to be moved to
+									--Already occupied
+									movement_counter <= 0;				-- Checking ends, reset counters
+									read_addr_counter <= "000000";
+								end if;
+							elsif (p1y_sum = read_addr_counter - 1) then
+								if (board_r_data_in(to_integer(unsigned(p1x_sum) - 1)) = '1') then		-- '-1' to get the position that's trying to be moved to
+									--Already occupied
+									movement_counter <= 0;				-- Checking ends, reset counters
+									read_addr_counter <= "000000";
+								end if;
+							elsif (p2y_sum = read_addr_counter - 1) then
+								if (board_r_data_in(to_integer(unsigned(p2x_sum) - 1)) = '1') then		-- '-1' to get the position that's trying to be moved to
+									--Already occupied
+									movement_counter <= 0;				-- Checking ends, reset counters
+									read_addr_counter <= "000000";						
+								end if;
+							elsif (p3y_sum = read_addr_counter - 1) then
+								if (board_r_data_in(to_integer(unsigned(p3x_sum) - 1)) = '1') then 		-- '-1' to get the position that's trying to be moved to
+									--Already occupied
+									movement_counter <= 0;				-- Checking ends, reset counters
+									read_addr_counter <= "000000";				
+								end if;
 							end if;
-							movement_counter <= 0;
+							
+							if (read_addr_counter < BOARD_HEIGHT) then
+								read_addr_counter <= read_addr_counter + 1;
+							else
+								x_pos <= std_logic_vector(unsigned(x_pos) - 1);
+							end if;
+							--if (x_pos /= "0010" and p1x_sum /= "0010" and p2x_sum /= "0010" and p3x_sum /= "0010") then
+								--x_pos <= std_logic_vector(unsigned(piece_r_data_in(13 downto 10)) - '1');
+							--end if;
+							--movement_counter <= 0;
 						end if;
 						piece_w_enable_out <= '1';
-					elsif (pdata(1) = '0') then
+					elsif (pdata(1) = '0') then						--Left
 						if movement_counter < slow_ratio then
 							movement_counter <= movement_counter + 1;
 						else
@@ -124,7 +163,7 @@ p3y_sum <= p3y + ref_y;
 							movement_counter <= 0;
 						end if;
 						piece_w_enable_out <= '1';
-					elsif (pdata(7) = '0') then 
+					elsif (pdata(7) = '0') then						--A (Rotate)
 						if movement_counter < slow_ratio then
 							movement_counter <= movement_counter + 1;
 						else
@@ -132,7 +171,7 @@ p3y_sum <= p3y + ref_y;
 							movement_counter <= 0;
 						end if;
 						piece_w_enable_out <= '1';
-					elsif (pdata(4) = '0') then
+					elsif (pdata(4) = '0') then						--Start (Reset)
 						if movement_counter < slow_ratio then
 							movement_counter <= movement_counter + 1;
 						else
