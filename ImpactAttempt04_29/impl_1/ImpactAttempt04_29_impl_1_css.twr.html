@@ -1,8 +1,8 @@
 <HTML>
 <HEAD>
 <TITLE>Timing Report</TITLE>
-<link href="file:///C:/lscc/radiant/1.0/data/theme/css/light/report.css" rel="stylesheet" type="text/css" media="screen"/>
-<link href="file:///C:/lscc/radiant/1.0/data/theme/css/print/report.css" rel="stylesheet" type="text/css" media="print"/>
+<link href="" rel="stylesheet" type="text/css" media="screen"/>
+<link href="" rel="stylesheet" type="text/css" media="print"/>
 <style type="text/css">
 #toc {
   position: fixed;
@@ -894,5 +894,130 @@ window.addEventListener('scroll', function(e) {
 }
 </style>
 
+<style type='text/css'>
+pre {
+  margin-left: 2em;
+}
+tapath {
+  display: none;
+}
+.tools {
+  font-family: arial;
+  font-size: 0.8em;
+  text-align: center;
+  display: inline-block;
+}
+.tools:before{
+  content: "Shown in: ";
+  color: #1c79ec;
+  text-align: center;
+  padding-left: 0.5em;
+}
+.tools a {
+  color: rgb(192, 192, 192);
+  cursor: pointer;
+}
+.tools a:link {
+  text-decoration: none;
+}
+.tools a:hover {
+  color: #1c79ec;
+}
+.tools a:before {
+  content: " ";
+  width: 20px;
+  display: inline-block;
+  text-align: center;
+  padding-right: 5px;
+  padding-left: 2px;
+}
+.tools a:after {
+  text-align: center;
+  padding-right: 5px;
+}
+.na:before {
+  background: url("qrc:///report-view-html/images/netlist_analyzer_16.png") no-repeat center;
+}
+.na:after {
+  content: "Netlist Analyzer";
+}
+.fp:before {
+  background: url("qrc:///report-view-html/images/floorplanview_16.png") no-repeat center;
+}
+.fp:after {
+  content: "Floor Planner";
+}
+.phv:before {
+  background: url("qrc:///report-view-html/images/epic_16.png") no-repeat center;
+}
+.phv:after {
+  content: "Physical View";
+}
+</style>
+<script type='text/javascript'>
+<!--
+var show_log = 1; var show_phy = 1;
+function createTool(cls, path_obj) {
+  var tool = document.createElement('a');
+  tool.className = cls;
+  tool.onclick = (function(tool, path) {
+    return function() {
+      var tool_name;
+      var logical = false;
+      if (typeof path !== 'string' || path === null || path.length == 0)
+        return;
+      switch (cls) {
+        case 'na':
+          tool_name = 'SCHEMATIC_VIEW';
+          logical = true;
+          break;
+        case 'fp':
+          tool_name = 'FLOORPLANNER';
+          break;
+        case 'phv':
+          tool_name = 'PHYSICAL_VIEW';
+          break;
+      }
+      var url = 'NGView://' + tool_name + '/tapath?' + (logical?'view_type=tech&':'') + 'path=' +
+                encodeURIComponent(path);
+      console.log(url);
+      this.href = url;
+    }
+  })(cls, path_obj).bind(tool);
+  return tool;
+}
+function createTools(path_element) {
+  var tools = document.createElement('span');
+  tools.className = 'tools';
+  var path = path_element.textContent;
+  if (show_log) 
+    tools.appendChild(createTool('na', path));
+  if (show_phy) {
+    tools.appendChild(createTool('fp', path));
+    tools.appendChild(createTool('phv', path));
+  }
+  var p = path_element.parentNode;
+  p.insertBefore(tools, path_element);
+}
+function handleLeftpaths(left_paths, index) {
+    if (left_paths.length > index) {
+      setTimeout(function(paths, i) {
+        return function() {
+          var path = paths[i];
+          createTools(path);
+          handleLeftpaths(paths, i+1);
+        }
+      }(left_paths, index));
+    }
+}
+window.onload = function() {
+  if (!show_log && !show_phy) return; 
+  if (typeof window._$radiant !== 'undefined') {
+    var all_paths = document.getElementsByTagName('tapath');
+    handleLeftpaths(all_paths, 0);
+  }
+}
+//-->
+</script>
 </BODY>
 
