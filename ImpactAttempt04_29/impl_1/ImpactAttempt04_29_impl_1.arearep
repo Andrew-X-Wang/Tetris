@@ -1,0 +1,134 @@
+----------------------------------------------------------------------
+Report for cell Main.TECH
+Register bits:  228 of 5280 (4.318%)
+I/O cells:      16
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                              EBR_B         5          100.0
+                               CCU2        38          100.0
+                            FD1P3XZ       228          100.0
+                         HSOSC_CORE         1          100.0
+                                 IB         1          100.0
+                              IOL_B         2          100.0
+                               LUT4       478          100.0
+                                 OB        15          100.0
+SUB MODULES
+                                FSM         1
+                      Matrix_Driver         1
+                        Pattern_Gen         1
+                              Spawn         1
+                           UArray2b         1
+                  controller_change         1
+                             impact         1
+                          lut_piece         1
+                                nes         1
+                          piece_mem         1
+                         slow_clock         1
+                              TOTAL       779
+----------------------------------------------------------------------
+Report for cell nes.v1
+Instance Path : nes_inst
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                                FA2        11           28.9
+                            FD1P3XZ        43           18.9
+                               LUT4        14            2.9
+SUB MODULES
+                         slow_clock         1
+                              TOTAL        69
+----------------------------------------------------------------------
+Report for cell slow_clock.v1
+Instance Path : nes_inst.CLK_MAP
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                                FA2        11           28.9
+                            FD1P3XZ        20            8.8
+                               LUT4         9            1.9
+                              TOTAL        40
+----------------------------------------------------------------------
+Report for cell piece_mem.v1
+Instance Path : piece_mem_inst
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                            FD1P3XZ        28           12.3
+                               LUT4        12            2.5
+                              TOTAL        40
+----------------------------------------------------------------------
+Report for cell impact.v1
+Instance Path : impact_inst
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                              EBR_B         2           40.0
+                            FD1P3XZ        55           24.1
+                               LUT4       219           45.8
+SUB MODULES
+                          lut_piece         1
+                              TOTAL       277
+----------------------------------------------------------------------
+Report for cell lut_piece.v1
+Instance Path : impact_inst.lut_inst
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                              EBR_B         2           40.0
+                              TOTAL         2
+----------------------------------------------------------------------
+Report for cell Spawn.v1
+Instance Path : Spawn_inst
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                            FD1P3XZ         8            3.5
+                               LUT4        15            3.1
+                              TOTAL        23
+----------------------------------------------------------------------
+Report for cell FSM.v1
+Instance Path : fsm_inst
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                            FD1P3XZ         2            0.9
+                               LUT4         4            0.8
+                              TOTAL         6
+----------------------------------------------------------------------
+Report for cell controller_change.v1
+Instance Path : cc_inst
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                                FA2        17           44.7
+                            FD1P3XZ        45           19.7
+                               LUT4        70           14.6
+                              TOTAL       132
+----------------------------------------------------------------------
+Report for cell Pattern_Gen.v1
+Instance Path : pattern_gen_inst
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                              EBR_B         2           40.0
+                            FD1P3XZ        17            7.5
+                               LUT4        79           16.5
+SUB MODULES
+                          lut_piece         1
+                              TOTAL        99
+----------------------------------------------------------------------
+Report for cell lut_piece.v1
+Instance Path : pattern_gen_inst.lut_inst
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                              EBR_B         2           40.0
+                              TOTAL         2
+----------------------------------------------------------------------
+Report for cell Matrix_Driver.v1
+Instance Path : MD_inst
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                                FA2         8           21.1
+                            FD1P3XZ        10            4.4
+                              IOL_B         2          100.0
+                               LUT4         8            1.7
+                              TOTAL        28
+----------------------------------------------------------------------
+Report for cell UArray2b.v1
+Instance Path : UArray2b_inst
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                              EBR_B         1           20.0
+                            FD1P3XZ        16            7.0
+                              TOTAL        17

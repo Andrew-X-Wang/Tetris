@@ -1,0 +1,207 @@
+  Lattice Mapping Report File for Design Module 'ImpactAttempt04_29_impl_1'
+
+Target Vendor:        LATTICE
+Target Device:        iCE40UP5KSG48
+Target Performance:   High-Performance_1.2V
+
+Mapper:    version Radiant (64-bit) 1.0.0.350.6
+Mapped on: Mon Apr 29 14:35:59 2019
+
+Design Information
+------------------
+
+Command line:   map ImpactAttempt04_29_impl_1_syn.udb
+     C:/Users/stone/my_designs/ImpactAttempt04_29/Constraints.pdc -o
+     ImpactAttempt04_29_impl_1.udb -gui
+
+Design Summary
+--------------
+
+   Number of slice registers: 228 out of  5280 (4%)
+   Number of I/O registers:      2 out of   117 (2%)
+   Number of LUT4s:           581 out of  5280 (11%)
+      Number of logic LUT4s:             480
+      Number of inserted feedthru LUT4s:  23
+      Number of replicated LUT4s:          2
+      Number of ripple logic:             38 (76 LUT4s)
+   Number of IO sites used:   16 out of 39 (41%)
+      Number of IO sites used for general PIOs: 16
+      Number of IO sites used for I3Cs: 0 out of 2 (0%)
+      Number of IO sites used for PIOs+I3Cs: 16 out of 36 (44%)
+      (note: If I3C is not used, its site can be used as general PIO)
+      Number of IO sites used for OD+RGB IO buffers: 0 out of 3 (0%)
+   Number of DSPs:             0 out of 8 (0%)
+   Number of I2Cs:             0 out of 2 (0%)
+   Number of High Speed OSCs:  1 out of 1 (100%)
+   Number of Low Speed OSCs:   0 out of 1 (0%)
+   Number of RGB PWM:          0 out of 1 (0%)
+   Number of RGB Drivers:      0 out of 1 (0%)
+   Number of SCL FILTERs:      0 out of 2 (0%)
+   Number of SRAMs:            0 out of 4 (0%)
+   Number of WARMBOOTs:        0 out of 1 (0%)
+   Number of SPIs:             0 out of 2 (0%)
+   Number of EBRs:             5 out of 30 (16%)
+   Number of PLLs:             0 out of 1 (0%)
+   Number of Clocks:  3
+      Net nes_inst/cnt[8]: 8 loads, 8 rising, 0 falling (Driver: Pin
+     nes_inst.CLK_MAP.cnt_791_874__i8/Q)
+      Net matrix_clk_c: 198 loads, 198 rising, 0 falling (Driver: Pin
+     flip_flop_clk_11/Q)
+      Net clk: 3 loads, 3 rising, 0 falling (Driver: Pin hsosc_inst/CLKHF)
+   Number of Clock Enables:  14
+      Net VCC_net: 11 loads, 0 SLICEs
+      Net piece_mem_inst/n3175: 3 loads, 3 SLICEs
+      Net n532: 12 loads, 12 SLICEs
+      Net piece_sel_pg_4__N_487: 4 loads, 3 SLICEs
+      Net n1455: 4 loads, 4 SLICEs
+      Net n7_adj_727: 1 loads, 1 SLICEs
+      Net impact_inst/n3156: 20 loads, 20 SLICEs
+      Net w_enable_sig: 1 loads, 0 SLICEs
+      Net n483: 3 loads, 3 SLICEs
+      Net fsm_inst/n3186: 2 loads, 2 SLICEs
+      Net n633: 17 loads, 17 SLICEs
+
+                                    Page 1
+
+
+
+
+
+Design Summary (cont)
+---------------------
+      Net cc_inst/n3157: 2 loads, 2 SLICEs
+      Net cc_inst/n629: 9 loads, 9 SLICEs
+      Net MD_inst/row_up_3__N_338: 3 loads, 3 SLICEs
+   Number of LSRs:  6
+      Net piece_sel_pg_4__N_487: 7 loads, 7 SLICEs
+      Net Spawn_inst/n5507: 3 loads, 3 SLICEs
+      Net fsm_inst/piece_w_enable_out_N_67: 1 loads, 1 SLICEs
+      Net cc_inst/n3276: 17 loads, 17 SLICEs
+      Net pattern_gen_inst/n1509: 3 loads, 3 SLICEs
+      Net MD_inst/scol_5__N_333: 4 loads, 4 SLICEs
+   Top 10 highest fanout non-clock nets:
+      Net n4556: 29 loads
+      Net curr_state[0]: 28 loads
+      Net curr_state[1]: 28 loads
+      Net VCC_net: 26 loads
+      Net impact_inst/n3156: 21 loads
+      Net piece_sel_pg_4__N_487: 20 loads
+      Net n633: 18 loads
+      Net w_enable_piece_sig[0]: 18 loads
+      Net write_piece_N_253: 17 loads
+      Net w_enable_piece_sig[1]: 17 loads
+
+
+
+
+   Number of warnings:  0
+   Number of errors:    0
+
+Design Errors/Warnings
+----------------------
+
+   No errors or warnings present.
+
+IO (PIO) Attributes
+-------------------
+
++---------------------+-----------+-----------+
+| IO Name             | Direction | Levelmode |
+|                     |           |  IO_TYPE  |
++---------------------+-----------+-----------+
+| s_data_top          | INPUT     | LVCMOS33  |
++---------------------+-----------+-----------+
+| clk_cntr_top        | OUTPUT    | LVCMOS33  |
++---------------------+-----------+-----------+
+| latch_top           | OUTPUT    | LVCMOS33  |
++---------------------+-----------+-----------+
+| matrix_clk          | OUTPUT    | LVCMOS33  |
++---------------------+-----------+-----------+
+| OE                  | OUTPUT    | LVCMOS33  |
++---------------------+-----------+-----------+
+| lat                 | OUTPUT    | LVCMOS33  |
++---------------------+-----------+-----------+
+| row[0]              | OUTPUT    | LVCMOS33  |
++---------------------+-----------+-----------+
+| RGB[5]              | OUTPUT    | LVCMOS33  |
++---------------------+-----------+-----------+
+| RGB[4]              | OUTPUT    | LVCMOS33  |
+
+                                    Page 2
+
+
+
+
+
+IO (PIO) Attributes (cont)
+--------------------------
++---------------------+-----------+-----------+
+| RGB[3]              | OUTPUT    | LVCMOS33  |
++---------------------+-----------+-----------+
+| RGB[2]              | OUTPUT    | LVCMOS33  |
++---------------------+-----------+-----------+
+| RGB[1]              | OUTPUT    | LVCMOS33  |
++---------------------+-----------+-----------+
+| RGB[0]              | OUTPUT    | LVCMOS33  |
++---------------------+-----------+-----------+
+| row[3]              | OUTPUT    | LVCMOS33  |
++---------------------+-----------+-----------+
+| row[2]              | OUTPUT    | LVCMOS33  |
++---------------------+-----------+-----------+
+| row[1]              | OUTPUT    | LVCMOS33  |
++---------------------+-----------+-----------+
+
+OSC Summary
+-----------
+
+OSC 1:                                 Pin/Node Value
+  OSC Instance Name:                            hsosc_inst
+  OSC Type:                                     HSOSC_CORE
+  Power UP:                            NODE     VCC_net
+  Enable Signal:                       NODE     VCC_net
+  OSC Output:                          NODE     clk
+  DIV Setting:                                  0b00
+
+ASIC Components
+---------------
+
+Instance Name: impact_inst.lut_inst.mux_41
+         Type: EBR
+Instance Name: impact_inst.lut_inst.mux_42
+         Type: EBR
+Instance Name: pattern_gen_inst.lut_inst.mux_45
+         Type: EBR
+Instance Name: pattern_gen_inst.lut_inst.mux_46
+         Type: EBR
+Instance Name: MD_inst.slat_23
+         Type: IOLOGIC
+Instance Name: MD_inst.MD_OE_22
+         Type: IOLOGIC
+Instance Name: UArray2b_inst.mem0
+         Type: EBR
+Instance Name: hsosc_inst
+         Type: HFOSC
+
+Run Time and Memory Usage
+-------------------------
+
+   Total CPU Time: 0 secs
+   Total REAL Time: 0 secs
+   Peak Memory Usage: 77 MB
+
+
+
+
+
+                                    Page 3
+
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995
+     AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent
+     Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems
+     All rights reserved.
+Copyright (c) 2002-2018 Lattice Semiconductor
+     Corporation,  All rights reserved.

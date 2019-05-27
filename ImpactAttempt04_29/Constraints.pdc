@@ -1,0 +1,18 @@
+ldc_set_location -site {21} [get_ports {RGB[1]}]
+ldc_set_location -site {12} [get_ports {RGB[0]}]
+ldc_set_location -site {13} [get_ports {RGB[2]}]
+ldc_set_location -site {19} [get_ports {RGB[3]}]
+ldc_set_location -site {18} [get_ports {RGB[4]}]
+ldc_set_location -site {11} [get_ports {RGB[5]}]
+ldc_set_location -site {42} [get_ports OE]
+ldc_set_location -site {43} [get_ports matrix_clk]
+ldc_set_location -site {37} [get_ports lat]
+ldc_set_location -site {6} [get_ports {row[0]}]
+ldc_set_location -site {44} [get_ports {row[1]}]
+ldc_set_location -site {4} [get_ports {row[2]}]
+ldc_set_location -site {3} [get_ports {row[3]}]
+ldc_set_location -site {23} [get_ports s_data_top]
+ldc_set_location -site {25} [get_ports clk_cntr_top]
+ldc_set_location -site {26} [get_ports latch_top]
+
+
