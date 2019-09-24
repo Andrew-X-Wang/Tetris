@@ -1,2 +1,2 @@
 # Tetris
-Tetris remade by programming an FPGA in VHDL, to be displayed on a 64x32 LED matrix.
+This is a baseline version of Tetris remade by programming an FPGA in VHDL. Input was taken by an NES controller and output was shown on a 64 x 32 Adafruit LED matrix.
